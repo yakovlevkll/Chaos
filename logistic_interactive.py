@@ -38,6 +38,17 @@ colors =  {
             'darker' :"#23374d",
 }
 
+colors =  {
+            'lightest':"#141414",
+            'lighter':"#181818",
+            'light':"#1f1f1f",
+            'himid':"#d85050",
+            'midmid':"#ff1030",
+            'lomid':"#ca4f4f",
+            'dark' :"#ffffff",
+            'darker' :"#9acbff",
+}
+
 numlabelsize = 22
 txtlabelsize = 20
 
@@ -286,7 +297,7 @@ def cobweb_plot(plt, idx=-1,
 def series_plot(plt, y_vals, idx=100, r=0, xall=False):
 
     plt.clear()
-    plt.setTitle("Population vs Time, growth rate: {:4.2f}".format(r))
+    plt.setTitle("Population vs Time, λ = {:4.2f}, x0 = {:4.2f}".format(r, x))
 
     t = np.arange(len(y_vals))
     y = y_vals[:idx]
