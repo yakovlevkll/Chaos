@@ -294,10 +294,10 @@ def cobweb_plot(plt, idx=-1,
 
     return np.concatenate(([initial_pop,], np.array(cobweb_y_vals[1::3])))
 
-def series_plot(plt, y_vals, idx=100, r=0, xall=False):
+def series_plot(plt, y_vals, idx=100, r=0, xall=False, ipop=0):
 
     plt.clear()
-    plt.setTitle("Population vs Time, λ = {:4.2f}, x0 = {:4.2f}".format(r, x))
+    plt.setTitle("Population vs Time, λ = {:4.2f}, x0 = {:4.2f}".format(r, ipop))
 
     t = np.arange(len(y_vals))
     y = y_vals[:idx]
@@ -702,7 +702,7 @@ class Widget(QWidget):
 
         if self.controls.series_box.isChecked():
             self.plots[1].setVisible(True)
-            series_plot(self.plots[1], y_vals, r=rate, xall=True)
+            series_plot(self.plots[1], y_vals, r=rate, xall=True, ipop=ipop)
         else:
             self.plots[1].setVisible(False)
 
